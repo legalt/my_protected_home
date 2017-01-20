@@ -2,10 +2,8 @@
 #include <pthread.h>
 #include "../include/safehouse.h"
 
-using namespace std;
-
-const string TELEGRAM_BOT_ID = "ID";
-const string TELEGRAM_CHAT_ID = "ID";
+const std::string TELEGRAM_BOT_ID = "ID";
+const std::string TELEGRAM_CHAT_ID = "ID";
 
 void *run_spy ( void * data ) {
     int cam_id = *(int *)data;
@@ -24,7 +22,7 @@ int main() {
     pthread_t * thread = new pthread_t[COUNT_ALLOWED_CAMERS];    
 			
     if ( !COUNT_ALLOWED_CAMERS  ) {		
-        cerr << "Not found camers" << endl;
+        std::cerr << "Not found camers" << std::endl;
        	return 0;
     }	
     
@@ -32,12 +30,12 @@ int main() {
         id[i] = i;
 
         if (pthread_create(&thread[i], NULL, run_spy, &id[i]) != 0 ) {
-            cerr << "Creating the thread" << endl;
+            std::cerr << "Creating the thread" << std::endl;
         }
     }
 
     for ( int i = 0; i < COUNT_ALLOWED_CAMERS; i++ ) {
-        cout << i << endl;
+        std::cout << i << std::endl;
         pthread_join(thread[i], NULL);
     }
   

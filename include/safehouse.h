@@ -4,18 +4,16 @@
 #include <iostream>
 #include "telegrambot.h"
 
-using namespace std;
-
 class SafeHouse {
 	private:
     	TelegramBot *m_tb;
     	int m_last_notify_time = 0;
 
 	public:
-    	SafeHouse ( string, string );
+    	SafeHouse ( std::string, std::string );
     	static int count_allowed_camers();
     	int detect_face ( const int& );
-    	void send_notification ( int, string );
+    	void send_notification ( int, std::string );
 };
 
 #endif

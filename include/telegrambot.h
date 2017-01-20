@@ -4,18 +4,16 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 class TelegramBot {
 	private:
-  		string id;
-  		string chat_id;
-  		vector<string> chat_list;
+  		std::string id;
+  		std::string chat_id;
+  		std::vector<std::string> chat_list;
 	
 	public:
-    	TelegramBot ( string bot_id, string chat_id );
-    	bool sendMessage ( string message );    	
-    	bool sendPhoto ( string imgPath, string caption = "" );
+    	TelegramBot ( std::string bot_id, std::string chat_id );
+    	bool sendMessage ( std::string message );    	
+    	bool sendPhoto ( std::string imgPath, std::string caption = "" );
 };
 
 #endif

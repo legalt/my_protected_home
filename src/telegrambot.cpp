@@ -6,12 +6,12 @@
 #include "../include/telegrambot.h"
 
 
-TelegramBot::TelegramBot( string bot_id, string chat_id ) {
+TelegramBot::TelegramBot ( std::string bot_id, std::string chat_id ) {
   this->id = bot_id;
   this->chat_id = chat_id;
 }
 
-bool TelegramBot::sendMessage ( string message ) {          
+bool TelegramBot::sendMessage ( std::string message ) {          
     if ( !message.size() ) {
       return false;
     }
@@ -20,10 +20,10 @@ bool TelegramBot::sendMessage ( string message ) {
     CURL *curl = curl_easy_init();
 
     if ( curl == NULL ) { 
-
+      return false;
     }
     
-    string url = boost::str(boost::format("api.telegram.org/bot%1%/sendMessage?chat_id=%2%&text=%3%") % this->id % this->chat_id % message);
+    std::string url = boost::str(boost::format("api.telegram.org/bot%1%/sendMessage?chat_id=%2%&text=%3%") % this->id % this->chat_id % message);
     curl_easy_setopt(curl, CURLOPT_URL, url.c_str());                
     CURLcode result = curl_easy_perform(curl);
     curl_easy_cleanup(curl);
@@ -33,11 +33,11 @@ bool TelegramBot::sendMessage ( string message ) {
       return false;
     }    
     
-    return (curl == NULL);
+    return true;
 }
 
 
-bool TelegramBot::sendPhoto ( string imgPath, string caption ) {          
+bool TelegramBot::sendPhoto ( std::string imgPath, std::string caption ) {          
     // set up the header
     struct curl_httppost *formpost = NULL;
     struct curl_httppost *lastptr = NULL;

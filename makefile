@@ -1,4 +1,4 @@
-CFLAGS = -Wall -pedantic -std=c++11 `pkg-config --cflags opencv`
+CFLAGS = -Wall -pedantic -std=c++14 `pkg-config --cflags opencv`
 
 LIBS = -lpthread -lstdc++ -lcurl `pkg-config --libs opencv`
 
