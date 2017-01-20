@@ -18,7 +18,7 @@ Install libs: opencv, curl.
 
 On Ubuntu/Debian use: 
 
-    sudo apt-get install libopencv-dev libboost-all-dev libcurl -y
+    sudo apt-get install libopencv-dev libboost-all-dev libcurl3 -y
     make build
     ./bin/main
 

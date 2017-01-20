@@ -5,7 +5,7 @@ compiler:
 
 install:
  - sudo apt-get update
- - sudo apt-get install libopencv-dev libboost-all-dev libcurl
+ - sudo apt-get install libopencv-dev libboost-all-dev libcurl3
 
 script:
   - git submodule update --init --recursive  
