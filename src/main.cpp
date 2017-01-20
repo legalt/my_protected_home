@@ -4,8 +4,8 @@
 
 using namespace std;
 
-const string TELEGRAM_BOT_ID = "300138224:AAGC3GPO4BskdWCEgXmTy8VyHRIfpyFZ_4A";
-const string TELEGRAM_CHAT_ID = "-1001071795386";
+const string TELEGRAM_BOT_ID = "ID";
+const string TELEGRAM_CHAT_ID = "ID";
 
 void *run_spy ( void * data ) {
     int cam_id = *(int *)data;
