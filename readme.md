@@ -1,6 +1,8 @@
 MY PROTECTED HOUSE
 ============================
 
+[![Build Status](https://travis-ci.org/legalt/my_protected_home.svg?branch=master)](https://travis-ci.org/legalt/my_protected_home)
+
 Application for security your house.
 Recognition image(face, low body and full body) from your connected webcams and send photo in telegram room.
 
